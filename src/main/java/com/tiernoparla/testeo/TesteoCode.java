@@ -1,7 +1,7 @@
 
-package com.tiernoparla.testeocode;
+package com.tiernoparla.testeo;
 
-public class Testeocode {
+public class TesteoCode {
     
     public static final int EVEN_PARITY = 0;
     
@@ -9,13 +9,15 @@ public class Testeocode {
     
     private int checkMode = EVEN_PARITY;
     
+    private boolean decodeSuccess = false;
+    
     private boolean errorSrc = false;
     
     private Integer errorIndex;
     
-    public Testeo() {}
+    public TesteoCode() {}
     
-    public Testeo(int checkMode) {
+    public TesteoCode(int checkMode) {
         if (checkMode == ODD_PARITY) {
             this.checkMode = ODD_PARITY;
         } else {
@@ -25,12 +27,12 @@ public class Testeocode {
     
     public String code  (String src) {
         if (src == null || src.equals("")) {
-            return "nada";
+            return "no ha puesto nada";
         } //if
         String[] srcArray = src.trim().split("");
         for (String srcChar : srcArray) {
             if (!srcChar.equals("0") && !srcChar.equals("1")) {
-                return "mal";
+                return "error caracter";
             } //if
         } //for
         
@@ -45,7 +47,9 @@ public class Testeocode {
             } else {
                 resultArray[i] = Integer.parseInt(srcArray[j++]);
             } //if            
-    } //code
+        return null;
+    } //Code
+    
     
     
     
