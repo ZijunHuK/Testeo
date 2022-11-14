@@ -1,7 +1,7 @@
 
 package com.tiernoparla.testeo;
 
-public class TesteoCode {
+public class Testeo {
     
     public static final int EVEN_PARITY = 0;
     
@@ -15,9 +15,9 @@ public class TesteoCode {
     
     private Integer errorIndex;
     
-    public TesteoCode() {}
+    public Testeo() {}
     
-    public TesteoCode(int checkMode) {
+    public Testeo(int checkMode) {
         if (checkMode == ODD_PARITY) {
             this.checkMode = ODD_PARITY;
         } else {
